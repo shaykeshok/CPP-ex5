@@ -1,9 +1,4 @@
-/*
- * Test.cpp
- *
- *  Created on: 15 June 2020
- *      Author: oriel malihi
- */
+
 #include "doctest.h"
 #include <string>
 #include <vector>
