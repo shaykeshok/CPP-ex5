@@ -74,8 +74,8 @@ TEST_CASE("accumulate class")
         index++;
     }
 
-    auto container3 = accumulate(vector({string("my "), string("name "), string("is "), string("oriel")}));
-    string ans3[] = {"my ", "my name ", "my name is ", "my name is oriel"};
+    auto container3 = accumulate(vector({string("my "), string("name "), string("is "), string("shayke")}));
+    string ans3[] = {"my ", "my name ", "my name is ", "my name is shayke"};
     index = 0;
     for (auto i : container3){
         CHECK(ans3[index].compare(i)==0);
@@ -143,7 +143,7 @@ TEST_CASE("filterfale class")
 }
 
 TEST_CASE("compress class"){
-    string name = "oriel";
+    string name = "shayke";
     auto v1 = vector({true,true,true,false,false});
     auto c1 = compress(name, v1);
     char ans[]={'o', 'r', 'i'};
