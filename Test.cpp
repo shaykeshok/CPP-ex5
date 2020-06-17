@@ -7,14 +7,14 @@
 #include "filterfalse.hpp"
 #include "compress.hpp"
 
-#define EPSILON 0.00001
+#define EPSILON 0.000001
 
 using namespace itertools;
 using namespace std;
 
 range my_range = range(5, 10);
 vector<int> vecInt = {2, 4, 6, 8};
-vector<string> vecString = {"Hello", "Bye", "Shalom"};
+vector<string> vecString = {"Shayke", "Elisaf", "zider"};
 vector<float> vecFloat = {-1, 0.3, 5.2, -4};
 
 template <typename T>
@@ -35,19 +35,8 @@ struct bool_functor
     }
 };
 
-TEST_CASE("Range class")
-{
 
-    int expected = 5;
-    for (auto i : my_range)
-    {
-        CHECK(i == expected);
-        expected++;
-    }
-    CHECK(expected == 10);
-}
-
-TEST_CASE("accumulate class")
+TEST_CASE("a")
 {
     auto my_container = accumulate(vecInt);
     int ans[] = {2, 6, 12, 20};
@@ -83,7 +72,19 @@ TEST_CASE("accumulate class")
     }
 }
 
-TEST_CASE("accumulate class with Functor")
+TEST_CASE("r")
+{
+
+    int expected = 5;
+    for (auto i : my_range)
+    {
+        CHECK(i == expected);
+        expected++;
+    }
+    CHECK(expected == 10);
+}
+
+TEST_CASE("a")
 {
     auto my_container = accumulate(vecInt, functor<int>());
     int ans[] = {2, 12, 36, 88};
@@ -111,7 +112,7 @@ TEST_CASE("accumulate class with Functor")
     }
 }
 
-TEST_CASE("filterfale class")
+TEST_CASE("f")
 {
     auto  c1 = filterfalse(bool_functor<int>(), vector({1,2,5,25,15,21,28,43,52}));
     int ans[] = {1,2,21,28,43,52};
@@ -142,7 +143,7 @@ TEST_CASE("filterfale class")
 
 }
 
-TEST_CASE("compress class"){
+TEST_CASE("c"){
     string name = "shayke";
     auto v1 = vector({true,true,true,false,false});
     auto c1 = compress(name, v1);
@@ -155,7 +156,7 @@ TEST_CASE("compress class"){
     
 }
 
-TEST_CASE("some more.."){
+TEST_CASE("t"){
     range r = range(0,60);
     int expected = 0;
     for(int i : r){
